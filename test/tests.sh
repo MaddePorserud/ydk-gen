@@ -375,7 +375,7 @@ function cpp_test_gen {
     cd gen-api/cpp/models_test-bundle/build/
     run_exec_test make install
 
-    # cpp_test_gen_test
+    cpp_test_gen_test
 }
 
 function py_test_gen_test {
@@ -396,7 +396,7 @@ function py_test_gen {
     pip install gen-api/python/ydk/dist/ydk*.tar.gz
     pip install gen-api/python/models_test-bundle/dist/ydk*.tar.gz
 
-    # py_test_gen_test
+    py_test_gen_test
 }
 
 function test_gen_tests {
@@ -416,8 +416,8 @@ function test_gen_tests {
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd $DIR/..
 
-py_tests
-cpp_tests
+# py_tests
+# cpp_tests
 test_gen_tests
 cd $YDKGEN_HOME
 print_msg "combining coverage"
